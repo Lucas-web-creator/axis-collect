@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Criar formulário — AXIS Collect</title>
+
+    <link
+        rel="stylesheet"
+        href="create.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         HEADER
+         ================================================== -->
+
+    <header class="create-header">
+
+        <div class="create-header-container">
+
+            <a
+                href="index.html"
+                class="logo"
+            >
+                AXIS Collect
+            </a>
+
+
+            <div class="header-actions">
+
+                <a
+                    href="index.html"
+                    class="button button-secondary"
+                >
+                    Voltar
+                </a>
+
+                <button
+                    type="button"
+                    id="save-form-button"
+                    class="button button-primary"
+                >
+                    Salvar formulário
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ==================================================
+         CONTEÚDO PRINCIPAL
+         ================================================== -->
+
+    <main class="create-main">
+
+
+        <!-- ==================================================
+             INFORMAÇÕES DO FORMULÁRIO
+             ================================================== -->
+
+        <section class="form-information">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    Novo formulário
+                </span>
+
+                <h1>
+                    Crie seu formulário
+                </h1>
+
+                <p>
+                    Defina as informações principais
+                    e depois adicione os campos que
+                    farão parte do formulário.
+                </p>
+
+            </div>
+
+
+            <div class="information-fields">
+
+
+                <!-- Título -->
+
+                <div class="field-group">
+
+                    <label for="form-title">
+                        Título do formulário
+                    </label>
+
+                    <input
+                        type="text"
+                        id="form-title"
+                        placeholder="Ex.: Pesquisa de satisfação"
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <!-- Descrição -->
+
+                <div class="field-group">
+
+                    <label for="form-description">
+                        Descrição
+                    </label>
+
+                    <textarea
+                        id="form-description"
+                        placeholder="Digite uma descrição para o formulário..."
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             CONSTRUTOR
+             ================================================== -->
+
+        <section class="form-builder">
+
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Campos do formulário
+                    </h2>
+
+                    <p>
+                        Adicione e configure os campos
+                        que deseja utilizar.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="add-field-button"
+                    class="button button-primary"
+                >
+                    Adicionar campo
+                </button>
+
+            </div>
+
+
+
+            <!-- Lista onde o JavaScript adicionará
+                 os campos dinamicamente -->
+
+            <div
+                id="fields-list"
+                class="fields-list"
+            >
+            </div>
+
+
+
+            <!-- Estado vazio -->
+
+            <div
+                id="empty-fields"
+                class="empty-state"
+            >
+
+                <h3>
+                    Nenhum campo adicionado
+                </h3>
+
+                <p>
+                    Clique em "Adicionar campo"
+                    para começar a construir
+                    seu formulário.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             CONFIGURAÇÕES
+             ================================================== -->
+
+        <section class="form-settings">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Configurações
+                    </h2>
+
+                    <p>
+                        Defina como seu formulário
+                        deverá funcionar.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="settings-grid">
+
+
+                <!-- Respostas -->
+
+                <div class="setting-item">
+
+                    <div class="setting-content">
+
+                        <h3>
+                            Formulário ativo
+                        </h3>
+
+                        <p>
+                            Permite que o formulário
+                            seja utilizado.
+                        </p>
+
+                    </div>
+
+
+                    <label class="switch">
+
+                        <input
+                            type="checkbox"
+                            id="form-active"
+                            checked
+                        >
+
+                        <span class="switch-slider"></span>
+
+                    </label>
+
+                </div>
+
+
+
+                <!-- Múltiplas respostas -->
+
+                <div class="setting-item">
+
+                    <div class="setting-content">
+
+                        <h3>
+                            Permitir múltiplas respostas
+                        </h3>
+
+                        <p>
+                            Permite que uma mesma pessoa
+                            responda mais de uma vez.
+                        </p>
+
+                    </div>
+
+
+                    <label class="switch">
+
+                        <input
+                            type="checkbox"
+                            id="allow-multiple-responses"
+                        >
+
+                        <span class="switch-slider"></span>
+
+                    </label>
+
+                </div>
+
+
+
+                <!-- Progresso -->
+
+                <div class="setting-item">
+
+                    <div class="setting-content">
+
+                        <h3>
+                            Mostrar progresso
+                        </h3>
+
+                        <p>
+                            Exibe o progresso durante
+                            o preenchimento.
+                        </p>
+
+                    </div>
+
+
+                    <label class="switch">
+
+                        <input
+                            type="checkbox"
+                            id="show-progress"
+                        >
+
+                        <span class="switch-slider"></span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             PREVIEW
+             ================================================== -->
+
+        <section class="form-preview">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Visualização
+                    </h2>
+
+                    <p>
+                        Veja como o formulário ficará
+                        para quem irá preenchê-lo.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="preview-button"
+                    class="button button-secondary"
+                >
+                    Atualizar visualização
+                </button>
+
+            </div>
+
+
+
+            <div
+                id="preview-area"
+                class="preview-area"
+            >
+
+                <div class="preview-empty">
+
+                    <h3>
+                        Pré-visualização
+                    </h3>
+
+                    <p>
+                        Adicione campos para visualizar
+                        seu formulário.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ==================================================
+         FOOTER
+         ================================================== -->
+
+    <footer class="create-footer">
+
+        <span>
+            AXIS Collect
+        </span>
+
+        <span>
+            •
+        </span>
+
+        <span>
+            Criador de formulários
+        </span>
+
+    </footer>
+
+
+
+    <!-- ==================================================
+         JAVASCRIPT
+         ================================================== -->
+
+    <script src="create.js"></script>
+
+</body>
+
+</html>
